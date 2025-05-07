@@ -30,9 +30,29 @@
       fillOpacity: 0.3,        // độ trong suốt
       radius: 50               // bán kính (mét), có thể điều chỉnh
     }).addTo(map);
-
+    
     // Thêm popup
     circle.bindPopup("<b>Trường CĐCĐ Cà Mau</b>");
+
+    <!-- Bổ sung vào trong thẻ <script> hiện có, sau đoạn vẽ vòng tròn -->
+    // Tọa độ các đỉnh của tam giác (Công viên Hùng Vương)
+    var trianglePoints = [
+      [9.179460, 105.150998],
+      [9.178602, 105.152200],
+      [9.176907, 105.150955]
+    ];
+
+    // Vẽ polygon hình tam giác
+    var triangle = L.polygon(trianglePoints, {
+      color: '#ff0000',       // màu viền đỏ
+      weight: 4,              // độ rộng viền
+      fillColor: '#ffff00',   // màu nền vàng
+      fillOpacity: 0.5        // độ đậm nhạt
+    }).addTo(map);
+
+    // Thêm popup cho tam giác
+    triangle.bindPopup("<b>Công viên Hùng Vương</b>");
+
   </script>
 </body>
 </html>
